@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NishanthNewApp</title>
+    <style>
+        
+        
+        .Nisha-item{
+            background-color: rgb(104, 1, 65);
+            padding: 10px;
+            border-bottom: 1px solid black;
+
+        }
+        .close{
+            position: absolute;
+            right: 20px;
+            cursor: pointer;
+        }
+        .Nisha-list{
+            list-style: none;
+            padding-left: 0;
+
+        }
+        button{
+            color: rgb(161, 161, 161);
+            background-color: rgba(20, 19, 18, 0.979);
+        }
+        
+    
+        
+    </style>
+    
+</head>
+<body style="background-color:rgb(5, 141, 73) ;">
+    <div>
+        <h1>Nishanth App</h1>
+        <input type="text" id="Nishant-input" placeholder="Enter Nisha..."/>
+        <button class="Nishanth-btn btn btn--primary">EnterNisha</button>
+        <ul class="Nisha-list">
+            <li class="Nisha-item">Wtach<span class="close">X</span></li>
+            <li class="Nisha-item">Headset<span class="close">X</span></li>
+            <li class="Nisha-item">Mob<span class="close">X</span></li>
+        </ul>
+    </div>
+    <script>
+        const NishanthBtn=document.getElementsByClassName("Nishanth-btn")[0]
+        NishanthBtn.addEventListener('click',(event)=>{
+            const NishantInput = document.getElementById("Nishant-input")
+            const NishantInputval = NishantInput.value
+
+            const li = document.createElement('li')
+            li.classList.add('Nisha-item')
+            const text = document.createTextNode(NishantInputval)
+            li.appendChild(text)
+
+            const span = document.createElement('span')
+            span.classList.add('close')
+            const textNode = document.createTextNode('X')
+            span.appendChild(textNode)
+
+            li.appendChild(span)
+
+
+            const ul = document.getElementsByClassName('Nisha-list')[0]
+            ul.appendChild(li)
+
+
+
+            NishantInput.value= ""
+
+            span.addEventListener('click',(event) => {
+                const liitem = event.target
+                liitem.classList.toggle('strike')
+            })
+
+            span.addEventListener('click',(event) => {
+                const target = event.target
+                const parentLi = target.parentElement
+                parentLi.style.display="none"
+            })
+            
+
+            
+
+        })
+        
+    </script>
+   
+    
+</body>
+</html>
